@@ -32,7 +32,7 @@ static void showResult(Player& p, Dealer& d1,Dealer& d2,Dealer& d3) {
 			}
 		}
 	}
-	printf("1位:%s\n2位:%s\n3位:%s\n4位:%s", P[0]._pName, P[1]._pName, P[2]._pName, P[3]._pName);
+	printf("%sの勝ち",P[0]._pName);
 
 
 	/*if (p.calcScore() > d1.calcScore()) {
