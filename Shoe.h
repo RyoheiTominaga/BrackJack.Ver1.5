@@ -13,6 +13,6 @@ public:
 	int takeCard(); //カードを１枚返す
 
 public:
-	
+	//不明なオーバーライド指定子エラーが消えないです。。
    Card drawnCard();
 };
