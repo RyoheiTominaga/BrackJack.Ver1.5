@@ -82,7 +82,7 @@ int main()
 		d3.PlayBase(shoe);
 
 		//勝敗判定・結果表示
-		showResult(p, d1,d2,d3);
+		showResult(p, d1, d2, d3);
 	}
 	else
 	{
