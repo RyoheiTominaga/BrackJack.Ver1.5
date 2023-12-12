@@ -8,7 +8,7 @@ void Card::makeCardInf(int cardNum) {
 Card::Card() {
 	_cardMarkNum = 0;
 	_cardNum = 0;
-	_cardNumber = 0;
+	
 }
 Card::~Card() {
 
@@ -19,7 +19,13 @@ int Card::getMarkNum() {
 int Card::getNum() {
 	return  _cardNum;
 }
-int Card::getObNum() {
-	return _cardNumber;
-	_cardNumber++;
+
+void Card::operator=(const Card& other) {
+	_cardMarkNum = other._cardMarkNum;
+	_cardNum = other._cardNum;
+}
+
+void Card:: SetCard(int num, int mark) {
+	_cardNum = num;
+	_cardMarkNum = mark;
 }

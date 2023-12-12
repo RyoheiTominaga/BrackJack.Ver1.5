@@ -9,6 +9,7 @@ Shoe::Shoe()
 	//カード初期化
 	for (int i = 0;i < _cardNum;++i) {
 		_cardShoe[i] = i;
+		_shoe[i].SetCard(_cardNum / 13, _cardNum % 13 + 1);
 	}
 	_shuffle();//シャッフルする
 }

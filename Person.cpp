@@ -29,6 +29,7 @@ void Person::hit(Shoe* pShoe) {
 		if (_cardNum <= 15)
 		{
 			_hand[_cardNum] = pShoe->takeCard();
+			cout << "hand:" << _hand[_cardNum] << endl;
 			_cardNum++;
 		}
 
@@ -53,13 +54,14 @@ void Person::showHand()
 		//int type = _hand[i] / 13; //デッキごとに分けた後,13で割った数(0-3)で4種類を分割
 		
 		//標準出力
-		const char* strType[] = { "s", "h", "d", "c" };
+		/*const char* strType[] = { "s", "h", "d", "c" };
 		cout << strType[_markNum[i]];
-		cout << _NumberNum[i]<< ' ';
+		cout << _NumberNum[i]<< ' ';*/
+		cout << "マーク番号：" << _markNum[i] << endl;
+		cout << "番号：" << _NumberNum[i] << endl;
 	}
 	//改行
-	cout << endl;
-	cout << "score: " << calcScore() << endl; //スコアの表示
+	cout << "score: " << calcScore()<<"        " ; //スコアの表示
 }
 
 int Person::calcScore() {

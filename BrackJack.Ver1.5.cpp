@@ -22,17 +22,18 @@ static void showResult(Player& p, Dealer& d1,Dealer& d2,Dealer& d3) {
 	p.showHand();cout << "   ";d2.showHand();cout << "   ";d3.showHand();
 	cout << "============================ ============================ ============================ " << endl;
 
-	Person P[4] = {p,d1,d2,d3};
+	
+	Person *P[4] = {&p,&d1,&d2,&d3};
 	
 	for (int i = 0;i < 4;++i) {
 
 		for (int j = i;j < 4 - i;++j) {
-			if (P[j].calcScore() > P[j + 1].calcScore()) {
+			if (P[j]->calcScore() > P[j + 1]->calcScore()) {
 				swap(P[j], P[j + 1]);
 			}
 		}
 	}
-	printf("%sの勝ち",P[0]._pName);
+	printf("%sの勝ち",P[0]->_pName);
 
 
 	/*if (p.calcScore() > d1.calcScore()) {
@@ -56,20 +57,21 @@ int main()
 	Shoe shoe;
 	for (int i = 0;i < 2;++i)
 	{
-		p.hit(&shoe);
+		p.drawnCardFromShoe(shoe);
 	}
 	
 	printf("\n=========================\n");
 	printf("\n%s\n",d1._pName);
-	p.showHand();
+	d1.showHand();
 	printf("\n=========================\n");
 
+	cout << p._hand[0]<< p._hand[1] << endl;
 
 	printf("========================= ========================= ========================= ");
-	printf("\n%s        %s        %s\n",p._pName,d2._pName,d3._pName );
+	printf("\n%-26s%-26s%-26s\n",p._pName,d2._pName,d3._pName );
 	//d.hit(&shoe);
-	d1.showHand();
-	d1.hit(&shoe);
+	p.showHand();d2.showHand();d3.showHand();
+	p.hit(&shoe);
 	printf("\n========================= ========================= ========================= \n");
 	//まずはプレイヤーのターン処理
 	if (p.PlayBase(shoe) == true)

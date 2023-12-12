@@ -8,6 +8,7 @@ class Person
 public:
 	char* _pName;//–¼‘O
 protected:
+public:
 	int _hand[HAND_SIZE];//èDî•ñ
 	int _cardNum;//èD‚Ì–‡”
 	int _markNum[HAND_SIZE];
@@ -18,7 +19,7 @@ public:
 	Person(const char* pName);
 	virtual ~Person();
 
-	virtual bool PlayBase(Shoe& shoe);
+	virtual bool PlayBase(Shoe& shoe)=0;
 
 	void hit(Shoe* pShoe);//èD‚É“n‚·‚â‚ÂFƒVƒ…[‚©‚çˆê–‡ˆø‚­
 

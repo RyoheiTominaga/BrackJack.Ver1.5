@@ -4,7 +4,7 @@
 #include<iostream>
 using namespace std;
 
-Dealer::Dealer(const char* name) :Person(name);
+Dealer::Dealer(const char* name) :Person(name)
 {
    
 }
